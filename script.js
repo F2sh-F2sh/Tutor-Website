@@ -42,14 +42,12 @@ form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
     const reviewerName = document.getElementById("reviewer-name").value.trim();
-    const rating = Number(document.getElementById("rating").value);
     const comment = document.getElementById("comment").value.trim();
 
     const { error } = await supabase
         .from("reviews")
         .insert({
             reviewer_name: reviewerName,
-            rating: rating,
             comment: comment,
             is_approved: false
         });
