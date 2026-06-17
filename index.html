@@ -10,9 +10,41 @@
 
     <h2>Reviews</h2>
     <div id="reviews">
-        <p>No reviews yet.</p>
+        <p>Loading reviews...</p>
     </div>
 
-    <script src="script.js"></script>
+    <h2>Leave a Review</h2>
+
+    <form id="review-form">
+        <input
+            id="reviewer-name"
+            type="text"
+            placeholder="Your name"
+            required
+            maxlength="80"
+        >
+
+        <select id="rating" required>
+            <option value="">Choose rating</option>
+            <option value="5">5 stars</option>
+            <option value="4">4 stars</option>
+            <option value="3">3 stars</option>
+            <option value="2">2 stars</option>
+            <option value="1">1 star</option>
+        </select>
+
+        <textarea
+            id="comment"
+            placeholder="Write your review"
+            required
+            maxlength="1000"
+        ></textarea>
+
+        <button type="submit">Submit Review</button>
+    </form>
+
+    <p id="review-message"></p>
+
+    <script type="module" src="script.js"></script>
 </body>
 </html>
