@@ -14,7 +14,7 @@ const message = document.getElementById("review-message");
 async function loadReviews() {
     const { data, error } = await supabase
         .from("reviews")
-        .select("reviewer_name, rating, comment, created_at")
+        .select("reviewer_name, comment, created_at")
         .eq("is_approved", true)
         .order("created_at", { ascending: false });
 
