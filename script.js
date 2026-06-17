@@ -32,7 +32,6 @@ async function loadReviews() {
     reviewsDiv.innerHTML = data.map(review => `
         <div class="review">
             <strong>${escapeHtml(review.reviewer_name)}</strong>
-            <div>${"★".repeat(review.rating)}${"☆".repeat(5 - review.rating)}</div>
             <p>${escapeHtml(review.comment)}</p>
         </div>
     `).join("");
